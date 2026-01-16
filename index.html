@@ -496,64 +496,64 @@
       }
     </style>
     <style>
-    .adsense-block {
-      margin: 16px 0;
-      display: flex;
-      justify-content: center;
-    }
-    .adsbygoogle {
-      display: block;
-      margin: 16px auto;
+      .adsense-block {
+        margin: 16px 0;
+        display: flex;
+        justify-content: center;
+      }
+      .adsbygoogle {
+        display: block;
+        margin: 16px auto;
         text-align: center;
-}
-  </style>
-  <style>
-    .lang-switch {
-      position: fixed;
-      top: 16px;
-      right: 16px;
-      display: inline-flex;
-      gap: 0;
-      padding: 3px;
-      border-radius: 999px;
-      background: rgba(11, 18, 32, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      z-index: 100;
-      border: 1px solid rgba(122, 167, 255, 0.3);
-    }
-    .lang-switch button {
-      border: none;
-      background: transparent;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 7px 14px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      min-width: 44px;
-      text-align: center;
-      letter-spacing: 0.02em;
-    }
-    .lang-switch button.active {
-      background: rgba(122, 167, 255, 0.2);
-      color: #7aa7ff;
-      box-shadow: 0 2px 8px rgba(122, 167, 255, 0.4);
-    }
-    .lang-switch button:not(.active):hover {
-      background: rgba(122, 167, 255, 0.1);
-      color: rgba(255, 255, 255, 0.9);
-    }
-  </style>
-</head>
+      }
+    </style>
+    <style>
+      .lang-switch {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        display: inline-flex;
+        gap: 0;
+        padding: 3px;
+        border-radius: 999px;
+        background: rgba(11, 18, 32, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        border: 1px solid rgba(122, 167, 255, 0.3);
+      }
+      .lang-switch button {
+        border: none;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 12px;
+        font-weight: 700;
+        padding: 7px 14px;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-width: 44px;
+        text-align: center;
+        letter-spacing: 0.02em;
+      }
+      .lang-switch button.active {
+        background: rgba(122, 167, 255, 0.2);
+        color: #7aa7ff;
+        box-shadow: 0 2px 8px rgba(122, 167, 255, 0.4);
+      }
+      .lang-switch button:not(.active):hover {
+        background: rgba(122, 167, 255, 0.1);
+        color: rgba(255, 255, 255, 0.9);
+      }
+    </style>
+  </head>
 
   <body>
-  <div class="lang-switch" role="tablist" aria-label="Language switcher">
-    <button type="button" data-lang="ko" class="active">KR</button>
-    <button type="button" data-lang="en">EN</button>
-  </div>
-  <div class="wrap">
+    <div class="lang-switch" role="tablist" aria-label="Language switcher">
+      <button type="button" data-lang="ko" class="active">KR</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <div class="wrap">
       <header>
         <div class="brand">
           <div class="logo"><span>📊</span></div>
@@ -567,10 +567,17 @@
         </div>
 
         <div class="top-actions">
-          <button class="btn primary" id="btnCalc" type="button" data-i18n="btnCalc">
+          <button
+            class="btn primary"
+            id="btnCalc"
+            type="button"
+            data-i18n="btnCalc"
+          >
             ⚙️ 계산하기
           </button>
-          <button class="btn" id="btnReset" type="button" data-i18n="btnReset">🔄 초기화</button>
+          <button class="btn" id="btnReset" type="button" data-i18n="btnReset">
+            🔄 초기화
+          </button>
           <button class="btn" id="btnShare" type="button" data-i18n="btnShare">
             📎 결과 요약 복사
           </button>
@@ -579,7 +586,8 @@
             href="https://funnyfunny.cloud"
             target="_blank"
             rel="noopener"
-            data-i18n="btnOtherService">➡️ 다른 서비스 보기</a
+            data-i18n="btnOtherService"
+            >➡️ 다른 서비스 보기</a
           >
         </div>
       </header>
@@ -589,7 +597,9 @@
         <section class="panel">
           <div class="hd">
             <strong data-i18n="inputTitle">입력</strong>
-            <span style="color: var(--muted); font-size: 12px" data-i18n="inputUnit"
+            <span
+              style="color: var(--muted); font-size: 12px"
+              data-i18n="inputUnit"
               >단위: 만원 또는 원(자유)</span
             >
           </div>
@@ -619,7 +629,9 @@
             </div>
 
             <div class="field">
-              <label for="realestate" data-i18n="assetRealestate">🏠 부동산</label>
+              <label for="realestate" data-i18n="assetRealestate"
+                >🏠 부동산</label
+              >
               <input
                 id="realestate"
                 type="number"
@@ -655,7 +667,9 @@
             </div>
 
             <div class="field">
-              <label for="bonds" data-i18n="assetBonds">🛡️ 채권/안전자산(선택)</label>
+              <label for="bonds" data-i18n="assetBonds"
+                >🛡️ 채권/안전자산(선택)</label
+              >
               <input
                 id="bonds"
                 type="number"
@@ -691,8 +705,8 @@
             </div>
 
             <div class="note" data-i18n="inputNote">
-              ※ 이 결과는 투자 권유가 아닌 자산 구조 점검용입니다.
-              입력값을 바꾸며 "가정 시뮬레이션"처럼 써도 좋아요.
+              ※ 이 결과는 투자 권유가 아닌 자산 구조 점검용입니다. 입력값을
+              바꾸며 "가정 시뮬레이션"처럼 써도 좋아요.
             </div>
           </div>
         </section>
@@ -701,19 +715,28 @@
         <section class="summary">
           <div class="summary-top">
             <div class="card">
-              <div class="kpi-title" data-i18n="resultTotalAssets">내 총 자산</div>
+              <div class="kpi-title" data-i18n="resultTotalAssets">
+                내 총 자산
+              </div>
               <div class="kpi-value" id="totalText">—</div>
               <div class="badge" id="typeBadge">
                 <span id="typeIcon">🧾</span>
-                <span id="typeName" data-i18n="resultBeforeCalc">아직 계산 전</span>
-                <small id="typeHint" style="margin-left: 6px" data-i18n="resultBeforeCalcHint"
+                <span id="typeName" data-i18n="resultBeforeCalc"
+                  >아직 계산 전</span
+                >
+                <small
+                  id="typeHint"
+                  style="margin-left: 6px"
+                  data-i18n="resultBeforeCalcHint"
                   >입력 후 계산하기를 눌러주세요</small
                 >
               </div>
             </div>
 
             <div class="card">
-              <div class="kpi-title" data-i18n="resultMiniBarChart">비중 미니 바 차트</div>
+              <div class="kpi-title" data-i18n="resultMiniBarChart">
+                비중 미니 바 차트
+              </div>
               <div class="bars" id="barList">
                 <!-- filled by JS -->
               </div>
@@ -724,17 +747,23 @@
           </div>
 
           <div class="card">
-            <div class="kpi-title" data-i18n="resultAssetCards">자산 비중 카드</div>
+            <div class="kpi-title" data-i18n="resultAssetCards">
+              자산 비중 카드
+            </div>
             <div class="asset-cards" id="assetCards">
               <!-- filled by JS -->
             </div>
           </div>
 
           <div class="card">
-            <div class="kpi-title" data-i18n="resultDiagnosis">핵심 진단(3가지)</div>
+            <div class="kpi-title" data-i18n="resultDiagnosis">
+              핵심 진단(3가지)
+            </div>
             <div class="diag-grid">
               <div class="diag">
-                <div class="title" data-i18n="diagRiskTitle">⚠️ 위험자산 비중</div>
+                <div class="title" data-i18n="diagRiskTitle">
+                  ⚠️ 위험자산 비중
+                </div>
                 <div class="big" id="riskPctText">—</div>
                 <div class="desc" id="riskDesc" data-i18n="diagRiskDesc">
                   주식·코인(옵션에 따라 부동산 포함) 비중을 기준으로 변동성 체감
@@ -743,7 +772,9 @@
               </div>
 
               <div class="diag">
-                <div class="title" data-i18n="diagLiquidityTitle">💧 현금 여유도</div>
+                <div class="title" data-i18n="diagLiquidityTitle">
+                  💧 현금 여유도
+                </div>
                 <div class="big" id="liqText">—</div>
                 <div class="desc" id="liqDesc" data-i18n="diagLiquidityDesc">
                   현금/예금 비중을 기준으로 급한 상황 또는 기회 대응력을 가볍게
@@ -752,9 +783,15 @@
               </div>
 
               <div class="diag">
-                <div class="title" data-i18n="diagConcentrationTitle">🎯 자산 집중도</div>
+                <div class="title" data-i18n="diagConcentrationTitle">
+                  🎯 자산 집중도
+                </div>
                 <div class="big" id="concText">—</div>
-                <div class="desc" id="concDesc" data-i18n="diagConcentrationDesc">
+                <div
+                  class="desc"
+                  id="concDesc"
+                  data-i18n="diagConcentrationDesc"
+                >
                   한 자산이 너무 커지면 장점도 커지지만, 예상 밖 상황에서
                   불편함이 생길 수 있습니다.
                 </div>
@@ -762,18 +799,22 @@
             </div>
 
             <div class="one-liner">
-              <div class="ttl" data-i18n="resultOneLinerTitle">오늘의 한 줄</div>
+              <div class="ttl" data-i18n="resultOneLinerTitle">
+                오늘의 한 줄
+              </div>
               <div class="txt" id="oneLiner">—</div>
             </div>
 
             <div class="action-card">
-              <div class="ttl" data-i18n="resultActionTitle">👉 이런 선택은 어때요?</div>
+              <div class="ttl" data-i18n="resultActionTitle">
+                👉 이런 선택은 어때요?
+              </div>
               <div class="txt" id="oneAction">—</div>
             </div>
 
             <div class="footer-note" data-i18n="resultFooter">
-              * 이 진단은 "성향 평가"가 아니라,
-              현재 입력한 자산 비중만으로 나온 결과입니다.
+              * 이 진단은 "성향 평가"가 아니라, 현재 입력한 자산 비중만으로 나온
+              결과입니다.
             </div>
           </div>
         </section>
@@ -789,9 +830,11 @@
       const translations = {
         ko: {
           metaTitle: "자산 비중 진단 · 포트폴리오 타입",
-          metaDescription: "현금·금·부동산·주식·코인 비중을 한눈에 보고, 가볍게 포트폴리오 타입을 진단합니다.",
+          metaDescription:
+            "현금·금·부동산·주식·코인 비중을 한눈에 보고, 가볍게 포트폴리오 타입을 진단합니다.",
           title: "자산 비중 진단",
-          subtitle: "현금·금(현물)·부동산·주식·코인 비중을 한눈에 보고, 포트폴리오 타입을 가볍게 점검합니다.",
+          subtitle:
+            "현금·금(현물)·부동산·주식·코인 비중을 한눈에 보고, 포트폴리오 타입을 가볍게 점검합니다.",
           btnCalc: "⚙️ 계산하기",
           btnReset: "🔄 초기화",
           btnShare: "📎 결과 요약 복사",
@@ -811,26 +854,33 @@
           optReAsRisk: "부동산을 위험자산에 포함",
           optReAsRiskTitle: "투자용 부동산을 위험자산 계산에 포함",
           optShareUrl: "URL 공유용 파라미터 생성",
-          optShareUrlTitle: "결과를 입력값과 함께 URL로 공유(민감하면 사용하지 마세요)",
-          inputNote: "※ 이 결과는 투자 권유가 아닌 자산 구조 점검용입니다. 입력값을 바꾸며 \"가정 시뮬레이션\"처럼 써도 좋아요.",
+          optShareUrlTitle:
+            "결과를 입력값과 함께 URL로 공유(민감하면 사용하지 마세요)",
+          inputNote:
+            '※ 이 결과는 투자 권유가 아닌 자산 구조 점검용입니다. 입력값을 바꾸며 "가정 시뮬레이션"처럼 써도 좋아요.',
           resultTotalAssets: "내 총 자산",
           resultBeforeCalc: "아직 계산 전",
           resultBeforeCalcHint: "입력 후 계산하기를 눌러주세요",
           resultNoInput: "입력값이 없어요",
           resultNoInputHint: "금액을 입력한 뒤 계산해보세요",
           resultMiniBarChart: "비중 미니 바 차트",
-          resultMiniBarChartNote: "숫자보다 \"구조\"가 먼저 보이도록, 큰 비중부터 정렬해 표시합니다.",
+          resultMiniBarChartNote:
+            '숫자보다 "구조"가 먼저 보이도록, 큰 비중부터 정렬해 표시합니다.',
           resultAssetCards: "자산 비중 카드",
           resultDiagnosis: "핵심 진단(3가지)",
           diagRiskTitle: "⚠️ 위험자산 비중",
-          diagRiskDesc: "주식·코인(옵션에 따라 부동산 포함) 비중을 기준으로 변동성 체감 가능성을 점검합니다.",
+          diagRiskDesc:
+            "주식·코인(옵션에 따라 부동산 포함) 비중을 기준으로 변동성 체감 가능성을 점검합니다.",
           diagLiquidityTitle: "💧 현금 여유도",
-          diagLiquidityDesc: "현금/예금 비중을 기준으로 급한 상황 또는 기회 대응력을 가볍게 점검합니다.",
+          diagLiquidityDesc:
+            "현금/예금 비중을 기준으로 급한 상황 또는 기회 대응력을 가볍게 점검합니다.",
           diagConcentrationTitle: "🎯 자산 집중도",
-          diagConcentrationDesc: "한 자산이 너무 커지면 장점도 커지지만, 예상 밖 상황에서 불편함이 생길 수 있습니다.",
+          diagConcentrationDesc:
+            "한 자산이 너무 커지면 장점도 커지지만, 예상 밖 상황에서 불편함이 생길 수 있습니다.",
           resultOneLinerTitle: "오늘의 한 줄",
           resultActionTitle: "👉 이런 선택은 어때요?",
-          resultFooter: "* 이 진단은 \"성향 평가\"가 아니라, 현재 입력한 자산 비중만으로 나온 결과입니다.",
+          resultFooter:
+            '* 이 진단은 "성향 평가"가 아니라, 현재 입력한 자산 비중만으로 나온 결과입니다.',
           copySummaryTitle: "자산 비중 진단 결과",
           copySummaryTotal: "총 자산",
           copySummaryType: "타입",
@@ -847,9 +897,11 @@
         },
         en: {
           metaTitle: "Asset Allocation Check · Portfolio Type",
-          metaDescription: "View cash, gold, real estate, stocks, and crypto allocations at a glance, and easily diagnose your portfolio type.",
+          metaDescription:
+            "View cash, gold, real estate, stocks, and crypto allocations at a glance, and easily diagnose your portfolio type.",
           title: "Asset Allocation Check",
-          subtitle: "View cash, gold (physical), real estate, stocks, and crypto allocations at a glance, and easily check your portfolio type.",
+          subtitle:
+            "View cash, gold (physical), real estate, stocks, and crypto allocations at a glance, and easily check your portfolio type.",
           btnCalc: "⚙️ Calculate",
           btnReset: "🔄 Reset",
           btnShare: "📎 Copy Summary",
@@ -867,28 +919,36 @@
           assetBonds: "🛡️ Bonds/Safe Assets (Optional)",
           assetOther: "🧩 Other (Optional)",
           optReAsRisk: "Include real estate in risk assets",
-          optReAsRiskTitle: "Include investment real estate in risk asset calculation",
+          optReAsRiskTitle:
+            "Include investment real estate in risk asset calculation",
           optShareUrl: "Generate URL sharing parameters",
-          optShareUrlTitle: "Share results with input values via URL (don't use if sensitive)",
-          inputNote: "※ This result is for asset structure checking, not investment advice. You can use it like a 'scenario simulation' by changing input values.",
+          optShareUrlTitle:
+            "Share results with input values via URL (don't use if sensitive)",
+          inputNote:
+            "※ This result is for asset structure checking, not investment advice. You can use it like a 'scenario simulation' by changing input values.",
           resultTotalAssets: "Total Assets",
           resultBeforeCalc: "Not calculated yet",
           resultBeforeCalcHint: "Enter values and click Calculate",
           resultNoInput: "No input",
           resultNoInputHint: "Enter amounts and calculate",
           resultMiniBarChart: "Mini Bar Chart",
-          resultMiniBarChartNote: "Sorted by largest allocation first to show 'structure' before numbers.",
+          resultMiniBarChartNote:
+            "Sorted by largest allocation first to show 'structure' before numbers.",
           resultAssetCards: "Asset Allocation Cards",
           resultDiagnosis: "Core Diagnosis (3 items)",
           diagRiskTitle: "⚠️ Risk Asset Ratio",
-          diagRiskDesc: "Checks volatility potential based on stocks and crypto (optionally including real estate) ratio.",
+          diagRiskDesc:
+            "Checks volatility potential based on stocks and crypto (optionally including real estate) ratio.",
           diagLiquidityTitle: "💧 Cash Reserves",
-          diagLiquidityDesc: "Checks responsiveness to urgent situations or opportunities based on cash/deposits ratio.",
+          diagLiquidityDesc:
+            "Checks responsiveness to urgent situations or opportunities based on cash/deposits ratio.",
           diagConcentrationTitle: "🎯 Asset Concentration",
-          diagConcentrationDesc: "If one asset grows too large, advantages grow but unexpected situations can cause discomfort.",
+          diagConcentrationDesc:
+            "If one asset grows too large, advantages grow but unexpected situations can cause discomfort.",
           resultOneLinerTitle: "Today's One-Liner",
           resultActionTitle: "👉 What about this option?",
-          resultFooter: "* This diagnosis is not a 'trait assessment' but a result based only on the currently entered asset allocation.",
+          resultFooter:
+            "* This diagnosis is not a 'trait assessment' but a result based only on the currently entered asset allocation.",
           copySummaryTitle: "Asset Allocation Check Result",
           copySummaryTotal: "Total Assets",
           copySummaryType: "Type",
@@ -923,8 +983,11 @@
         document.title = t("metaTitle");
         const descMeta = document.querySelector('meta[name="description"]');
         if (descMeta) descMeta.setAttribute("content", t("metaDescription"));
-        const ogDescMeta = document.querySelector('meta[property="og:description"]');
-        if (ogDescMeta) ogDescMeta.setAttribute("content", t("metaDescription"));
+        const ogDescMeta = document.querySelector(
+          'meta[property="og:description"]'
+        );
+        if (ogDescMeta)
+          ogDescMeta.setAttribute("content", t("metaDescription"));
         document.querySelectorAll("[data-i18n-content]").forEach((el) => {
           el.setAttribute("content", t(el.dataset.i18nContent));
         });
@@ -1009,7 +1072,8 @@
       const toast = (msg) => {
         const el = document.getElementById("toast");
         const t = window.t || ((key, vars = {}) => key);
-        el.textContent = typeof msg === "string" && msg.startsWith("toast") ? t(msg) : msg;
+        el.textContent =
+          typeof msg === "string" && msg.startsWith("toast") ? t(msg) : msg;
         el.classList.add("show");
         setTimeout(() => el.classList.remove("show"), 1200);
       };
@@ -1022,13 +1086,41 @@
       function getAssets() {
         const tFunc = window.t || ((key) => key);
         return [
-          { key: "cash", label: tFunc("assetCash").replace("💰 ", ""), icon: "💰" },
-          { key: "gold", label: tFunc("assetGold").replace("🪙 ", ""), icon: "🪙" },
-          { key: "realestate", label: tFunc("assetRealestate").replace("🏠 ", ""), icon: "🏠" },
-          { key: "stocks", label: tFunc("assetStocks").replace("📈 ", ""), icon: "📈" },
-          { key: "crypto", label: tFunc("assetCrypto").replace("🚀 ", ""), icon: "🚀" },
-          { key: "bonds", label: tFunc("assetBonds").replace("🛡️ ", ""), icon: "🛡️" },
-          { key: "other", label: tFunc("assetOther").replace("🧩 ", ""), icon: "🧩" },
+          {
+            key: "cash",
+            label: tFunc("assetCash").replace("💰 ", ""),
+            icon: "💰",
+          },
+          {
+            key: "gold",
+            label: tFunc("assetGold").replace("🪙 ", ""),
+            icon: "🪙",
+          },
+          {
+            key: "realestate",
+            label: tFunc("assetRealestate").replace("🏠 ", ""),
+            icon: "🏠",
+          },
+          {
+            key: "stocks",
+            label: tFunc("assetStocks").replace("📈 ", ""),
+            icon: "📈",
+          },
+          {
+            key: "crypto",
+            label: tFunc("assetCrypto").replace("🚀 ", ""),
+            icon: "🚀",
+          },
+          {
+            key: "bonds",
+            label: tFunc("assetBonds").replace("🛡️ ", ""),
+            icon: "🛡️",
+          },
+          {
+            key: "other",
+            label: tFunc("assetOther").replace("🧩 ", ""),
+            icon: "🧩",
+          },
         ];
       }
 
@@ -1041,24 +1133,32 @@
           return {
             icon: "🛡️",
             name: isKo ? "안정형" : "Conservative",
-            hint: isKo ? "변동성보다 안정이 우선인 구조" : "Structure prioritizing stability over volatility",
+            hint: isKo
+              ? "변동성보다 안정이 우선인 구조"
+              : "Structure prioritizing stability over volatility",
           };
         if (riskRatio < 0.6)
           return {
             icon: "⚖️",
             name: isKo ? "균형형" : "Balanced",
-            hint: isKo ? "성장과 안정이 섞인 구조" : "Structure mixing growth and stability",
+            hint: isKo
+              ? "성장과 안정이 섞인 구조"
+              : "Structure mixing growth and stability",
           };
         if (riskRatio < 0.85)
-          return { 
-            icon: "🚀", 
-            name: isKo ? "공격형" : "Aggressive", 
-            hint: isKo ? "성장을 우선하는 구조" : "Structure prioritizing growth" 
+          return {
+            icon: "🚀",
+            name: isKo ? "공격형" : "Aggressive",
+            hint: isKo
+              ? "성장을 우선하는 구조"
+              : "Structure prioritizing growth",
           };
         return {
           icon: "🌪️",
           name: isKo ? "고변동 집중형" : "High Volatility",
-          hint: isKo ? "수익과 변동성이 함께 큰 구조" : "Structure with high returns and volatility",
+          hint: isKo
+            ? "수익과 변동성이 함께 큰 구조"
+            : "Structure with high returns and volatility",
         };
       }
 
@@ -1068,21 +1168,29 @@
         if (cashRatio < 0.05)
           return {
             big: isKo ? "낮은 편" : "Low",
-            desc: isKo ? "현금이 적은 편이에요. 갑작스러운 상황이나 기회 대응이 불편할 수 있어요." : "Cash is relatively low. May be inconvenient for sudden situations or opportunity responses.",
+            desc: isKo
+              ? "현금이 적은 편이에요. 갑작스러운 상황이나 기회 대응이 불편할 수 있어요."
+              : "Cash is relatively low. May be inconvenient for sudden situations or opportunity responses.",
           };
         if (cashRatio < 0.2)
           return {
             big: isKo ? "보통 수준" : "Moderate",
-            desc: isKo ? "일상과 투자 모두 무난한 수준이에요. 필요하면 조금씩 조정해도 좋아요." : "Comfortable level for daily life and investment. Can adjust slightly if needed.",
+            desc: isKo
+              ? "일상과 투자 모두 무난한 수준이에요. 필요하면 조금씩 조정해도 좋아요."
+              : "Comfortable level for daily life and investment. Can adjust slightly if needed.",
           };
         if (cashRatio < 0.5)
           return {
             big: isKo ? "여유 있는 편" : "Comfortable",
-            desc: isKo ? "안정감이 좋아요. 다만 너무 과하면 성장 속도는 느려질 수 있어요." : "Good stability. However, too much may slow growth rate.",
+            desc: isKo
+              ? "안정감이 좋아요. 다만 너무 과하면 성장 속도는 느려질 수 있어요."
+              : "Good stability. However, too much may slow growth rate.",
           };
         return {
           big: isKo ? "매우 높은 편" : "Very High",
-          desc: isKo ? "안정감은 크지만, 자산이 일하지 않는 구간이 길어질 수 있어요." : "High stability, but assets may sit idle for longer periods.",
+          desc: isKo
+            ? "안정감은 크지만, 자산이 일하지 않는 구간이 길어질 수 있어요."
+            : "High stability, but assets may sit idle for longer periods.",
         };
       }
 
@@ -1093,10 +1201,10 @@
         const r = top.ratio;
         if (r >= 0.5)
           return {
-            big: isKo 
+            big: isKo
               ? `${top.label} 비중이 가장 큽니다 (${(r * 100).toFixed(1)}%)`
               : `${top.label} is largest (${(r * 100).toFixed(1)}%)`,
-            desc: isKo 
+            desc: isKo
               ? "한 자산에 비중이 큰 구조예요. 장점도 크지만, 예상 밖 상황에선 불편함이 생길 수 있어요."
               : "Structure with large allocation to one asset. Advantages are big, but unexpected situations can cause discomfort.",
           };
@@ -1125,10 +1233,10 @@
         const conservative = isKo ? "안정형" : "Conservative";
         const balanced = isKo ? "균형형" : "Balanced";
         const aggressive = isKo ? "공격형" : "Aggressive";
-        
+
         if (typeName === conservative || typeName === "Conservative") {
           if (cashRatio < 0.1)
-            return isKo 
+            return isKo
               ? "전체적으로 안정 중심이에요. 다만 현금 여유가 얇으면 마음이 흔들릴 수 있어요."
               : "Overall conservative focus. However, thin cash reserves may cause emotional volatility.";
           return isKo
@@ -1170,7 +1278,7 @@
       function oneAction(typeName, cashRatio, riskRatio, top) {
         const isKo = currentLang === "ko";
         const conservative = isKo ? "안정형" : "Conservative";
-        
+
         // 추천 행동은 "딱 1개"
         if (cashRatio < 0.05)
           return isKo
@@ -1195,7 +1303,7 @@
 
       // ---------- UI rendering ----------
       function render() {
-        const tFunc = window.t || ((key) => key);
+        const tFunc = window.t || ((key, vars = {}) => key);
         const ASSETS = getAssets();
         const values = {};
         ASSETS.forEach((a) => (values[a.key] = getNum(a.key)));
@@ -1206,14 +1314,17 @@
         if (total <= 0) {
           document.getElementById("totalText").textContent = "—";
           document.getElementById("typeIcon").textContent = "🧾";
-          document.getElementById("typeName").textContent = tFunc("resultNoInput");
-          document.getElementById("typeHint").textContent = tFunc("resultNoInputHint");
+          document.getElementById("typeName").textContent =
+            tFunc("resultNoInput");
+          document.getElementById("typeHint").textContent =
+            tFunc("resultNoInputHint");
           document.getElementById("assetCards").innerHTML = "";
           const isKo = currentLang === "ko";
-          const tFunc = window.t || ((key) => key);
           document.getElementById(
             "barList"
-          ).innerHTML = `<div style="color:var(--muted);font-size:12px;">${tFunc("resultBarListEmpty")}</div>`;
+          ).innerHTML = `<div style="color:var(--muted);font-size:12px;">${tFunc(
+            "resultBarListEmpty"
+          )}</div>`;
           document.getElementById("riskPctText").textContent = "—";
           document.getElementById("liqText").textContent = "—";
           document.getElementById("concText").textContent = "—";
@@ -1252,9 +1363,9 @@
         const typeInfo = portfolioType(riskRatio);
 
         // Update KPI
-        const tFunc = window.t || ((key) => key);
         const currency = tFunc("currencySymbol");
-        document.getElementById("totalText").textContent = currency + fmt(total);
+        document.getElementById("totalText").textContent =
+          currency + fmt(total);
         document.getElementById("typeIcon").textContent = typeInfo.icon;
         document.getElementById("typeName").textContent = typeInfo.name;
         document.getElementById("typeHint").textContent = typeInfo.hint;
@@ -1289,10 +1400,11 @@
       `;
           })
           .join("");
-        const tFunc = window.t || ((key) => key);
         document.getElementById("barList").innerHTML =
           bars ||
-          `<div style="color:var(--muted);font-size:12px;">${tFunc("resultBarListNoItems")}</div>`;
+          `<div style="color:var(--muted);font-size:12px;">${tFunc(
+            "resultBarListNoItems"
+          )}</div>`;
         // animate fills
         requestAnimationFrame(() => {
           document
@@ -1319,9 +1431,11 @@
           : riskRatio < 0.85
           ? "State with weight on growth. Volatility can be felt."
           : "High volatility zone. Having rules (upper/lower limits) helps.";
-        const tFunc = window.t || ((key, vars) => key);
         const riskPct = (riskRatio * 100).toFixed(1);
-        document.getElementById("riskDesc").textContent = tFunc("riskDescPrefix", { pct: riskPct, msg: riskMsg });
+        document.getElementById("riskDesc").textContent = tFunc(
+          "riskDescPrefix",
+          { pct: riskPct, msg: riskMsg }
+        );
 
         const liq = liquidityStatus(cashRatio);
         document.getElementById("liqText").textContent =
