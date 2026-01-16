@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>자산 비중 진단 · 포트폴리오 타입</title>
+    <title data-i18n-title="metaTitle">자산 비중 진단 · 포트폴리오 타입</title>
 
     <!-- Favicon: 자동 생성(SVG data URI) -->
     <link
@@ -16,6 +16,7 @@
     <meta
       property="og:description"
       content="현금·금·부동산·주식·코인 비중을 한눈에 보고, 가볍게 포트폴리오 타입을 진단합니다."
+      data-i18n-content="metaDescription"
     />
     <meta
       property="og:image"
@@ -924,15 +925,25 @@
         if (descMeta) descMeta.setAttribute("content", t("metaDescription"));
         const ogDescMeta = document.querySelector('meta[property="og:description"]');
         if (ogDescMeta) ogDescMeta.setAttribute("content", t("metaDescription"));
+        document.querySelectorAll("[data-i18n-content]").forEach((el) => {
+          el.setAttribute("content", t(el.dataset.i18nContent));
+        });
         document.documentElement.lang = currentLang;
         document.querySelectorAll("[data-i18n]").forEach((el) => {
           el.textContent = t(el.dataset.i18n);
+        });
+        document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+          el.innerHTML = t(el.dataset.i18nHtml);
         });
         document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
           el.placeholder = t(el.dataset.i18nPlaceholder);
         });
         document.querySelectorAll("[data-i18n-title]").forEach((el) => {
-          el.setAttribute("title", t(el.dataset.i18nTitle));
+          if (el.tagName === "TITLE") {
+            el.textContent = t(el.dataset.i18nTitle);
+          } else {
+            el.setAttribute("title", t(el.dataset.i18nTitle));
+          }
         });
       }
 
