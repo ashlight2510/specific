@@ -600,6 +600,7 @@
                 type="number"
                 min="0"
                 step="1"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 10000000"
               />
             </div>
@@ -611,6 +612,7 @@
                 type="number"
                 min="0"
                 step="1"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 3000000"
               />
             </div>
@@ -622,6 +624,7 @@
                 type="number"
                 min="0"
                 step="1"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 30000000"
               />
             </div>
@@ -633,6 +636,7 @@
                 type="number"
                 min="0"
                 step="1"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 15000000"
               />
             </div>
@@ -644,6 +648,7 @@
                 type="number"
                 min="0"
                 step="1"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 2000000"
               />
             </div>
@@ -655,6 +660,7 @@
                 type="number"
                 min="0"
                 step="1"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 5000000"
               />
             </div>
@@ -666,6 +672,7 @@
                 type="number"
                 min="0"
                 step="1"
+                data-i18n-placeholder="placeholderExample"
                 placeholder="예: 0"
               />
             </div>
@@ -772,7 +779,7 @@
       </div>
     </div>
 
-    <div class="toast" id="toast">복사했어요</div>
+    <div class="toast" id="toast" data-i18n="toastCopy">복사했어요</div>
 
     <script>
       // =========================
@@ -831,6 +838,11 @@
           copySummaryConcentration: "집중도",
           copySummaryOneLiner: "한 줄",
           copySummaryOtherServices: "다른 서비스",
+          placeholderExample: "예: 10000000",
+          resultBarListEmpty: "입력 후 계산하면 비중이 표시됩니다.",
+          resultBarListNoItems: "표시할 항목이 없어요.",
+          currencySymbol: "₩ ",
+          riskDescPrefix: "현재 위험자산 비중은 {pct}%입니다. {msg}",
         },
         en: {
           metaTitle: "Asset Allocation Check · Portfolio Type",
@@ -884,6 +896,11 @@
           copySummaryConcentration: "Concentration",
           copySummaryOneLiner: "One-Liner",
           copySummaryOtherServices: "Other Services",
+          placeholderExample: "e.g. 10000000",
+          resultBarListEmpty: "Allocations will be shown after calculation.",
+          resultBarListNoItems: "No items to display.",
+          currencySymbol: "$ ",
+          riskDescPrefix: "Current risk asset ratio is {pct}%. {msg}",
         },
       };
 
@@ -1182,9 +1199,10 @@
           document.getElementById("typeHint").textContent = tFunc("resultNoInputHint");
           document.getElementById("assetCards").innerHTML = "";
           const isKo = currentLang === "ko";
+          const tFunc = window.t || ((key) => key);
           document.getElementById(
             "barList"
-          ).innerHTML = `<div style="color:var(--muted);font-size:12px;">${isKo ? "입력 후 계산하면 비중이 표시됩니다." : "Allocations will be shown after calculation."}</div>`;
+          ).innerHTML = `<div style="color:var(--muted);font-size:12px;">${tFunc("resultBarListEmpty")}</div>`;
           document.getElementById("riskPctText").textContent = "—";
           document.getElementById("liqText").textContent = "—";
           document.getElementById("concText").textContent = "—";
@@ -1223,7 +1241,8 @@
         const typeInfo = portfolioType(riskRatio);
 
         // Update KPI
-        const currency = currentLang === "ko" ? "₩ " : "$ ";
+        const tFunc = window.t || ((key) => key);
+        const currency = tFunc("currencySymbol");
         document.getElementById("totalText").textContent = currency + fmt(total);
         document.getElementById("typeIcon").textContent = typeInfo.icon;
         document.getElementById("typeName").textContent = typeInfo.name;
@@ -1238,7 +1257,7 @@
               <div class="name">${a.icon} ${a.label}</div>
               <div class="pct">${(a.ratio * 100).toFixed(1)}%</div>
             </div>
-            <div class="amt">₩ ${fmt(a.value)}</div>
+            <div class="amt">${currency}${fmt(a.value)}</div>
           </div>
         `;
           })
@@ -1259,9 +1278,10 @@
       `;
           })
           .join("");
+        const tFunc = window.t || ((key) => key);
         document.getElementById("barList").innerHTML =
           bars ||
-          `<div style="color:var(--muted);font-size:12px;">표시할 항목이 없어요.</div>`;
+          `<div style="color:var(--muted);font-size:12px;">${tFunc("resultBarListNoItems")}</div>`;
         // animate fills
         requestAnimationFrame(() => {
           document
@@ -1288,9 +1308,9 @@
           : riskRatio < 0.85
           ? "State with weight on growth. Volatility can be felt."
           : "High volatility zone. Having rules (upper/lower limits) helps.";
-        document.getElementById("riskDesc").textContent = isKo
-          ? `현재 위험자산 비중은 ${(riskRatio * 100).toFixed(1)}%입니다. ${riskMsg}`
-          : `Current risk asset ratio is ${(riskRatio * 100).toFixed(1)}%. ${riskMsg}`;
+        const tFunc = window.t || ((key, vars) => key);
+        const riskPct = (riskRatio * 100).toFixed(1);
+        document.getElementById("riskDesc").textContent = tFunc("riskDescPrefix", { pct: riskPct, msg: riskMsg });
 
         const liq = liquidityStatus(cashRatio);
         document.getElementById("liqText").textContent =
@@ -1336,6 +1356,9 @@
           history.replaceState(null, "", `${location.pathname}`);
         }
       }
+
+      // Expose render function globally for language switching
+      window.render = render;
 
       function resetAll() {
         [
